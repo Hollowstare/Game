@@ -7,6 +7,7 @@ let time = 0;
 let clicks = 0;
 let check;
 let flag = false;
+let stopTime = 0;
 
 window.onload = function main() {
     setTimeout(forGame, 500);
@@ -48,7 +49,10 @@ window.onload = function main() {
 
     shuffle.onclick = function shuffle(){ 
         check = true;
+        if(stopTime === 0) {
         setInterval(timer,1000);
+        }
+        stopTime++;
         flag = true;
         document.getElementById("counter").innerHTML = 0;
         clicks = 0;
